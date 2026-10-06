@@ -1,6 +1,6 @@
 name: 오로지배 매출관리
 description: 오로지배 거래처·품목·거래 관리
-version: "0.1.0"
+version: "0.2.0"
 slug: onlypear_sales
 url: https://github.com/bluewings109/onlypear-sales-management
 arch:
@@ -9,12 +9,14 @@ image: ghcr.io/bluewings109/onlypear-sales
 startup: application
 boot: auto
 ports:
-  8000/tcp: 8000
+  8000/tcp: 8002
 ports_description:
-  8000/tcp: 웹 UI / API (Cloudflare Tunnel 이 이 포트로 연결)
+  8000/tcp: 웹 UI / API (내부망 접속용 호스트 포트)
 options:
   database_url: ""
   log_level: info
 schema:
   database_url: str
+  # 기본값을 두지 않아서, 설정하지 않으면 HA가 add-on 시작을 막는다.
+  login_password: password
   log_level: list(debug|info|warning|error)
