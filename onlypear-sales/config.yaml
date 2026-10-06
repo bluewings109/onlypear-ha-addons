@@ -1,0 +1,20 @@
+name: 오로지배 매출관리
+description: 오로지배 거래처·품목·거래 관리
+version: "0.0.0"
+slug: onlypear_sales
+url: https://github.com/bluewings109/onlypear-sales-management
+arch:
+  - aarch64
+image: ghcr.io/bluewings109/onlypear-sales
+startup: application
+boot: auto
+ports:
+  8000/tcp: 8000
+ports_description:
+  8000/tcp: 웹 UI / API (Cloudflare Tunnel 이 이 포트로 연결)
+options:
+  database_url: ""
+  log_level: info
+schema:
+  database_url: str
+  log_level: list(debug|info|warning|error)
