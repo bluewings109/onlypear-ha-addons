@@ -1,6 +1,6 @@
 name: 오로지배 매출관리
 description: 오로지배 거래처·품목·거래 관리
-version: "0.9.0"
+version: "0.10.0"
 slug: onlypear_sales
 url: https://github.com/bluewings109/onlypear-sales-management
 arch:
