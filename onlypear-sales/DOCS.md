@@ -7,6 +7,8 @@
 | `database_url` | PostgreSQL 접속 주소. 예) `postgresql+asyncpg://sales:비밀번호@<PostgreSQL add-on 호스트명>:5432/onlypear_sales` |
 | `login_password` | 로그인 비밀번호(필수). 화면에서 가려집니다. 바꾸면 add-on을 다시 시작해야 적용됩니다. |
 | `log_level` | 로그 레벨 |
+| `bolta_api_key` | 볼타 전자계산서 API 키(선택). 비워 두면 볼타 발행을 숨깁니다. `test_`는 테스트, `live_`는 실제 발행 |
+| `bolta_webhook_token` | 볼타 웹훅 주소의 비밀 토큰(선택). 볼타 개발자센터의 웹훅 URL `…/api/v1/webhooks/bolta/<토큰>`과 같은 값 |
 
 > `database_url`은 반드시 **`postgresql+asyncpg://`**로 시작해야 합니다. `postgresql://`로 넣으면 이미지에 없는 다른 드라이버(psycopg)를 찾다가 시작에 실패합니다.
 
