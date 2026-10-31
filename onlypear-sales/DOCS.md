@@ -17,3 +17,8 @@
 1. PostgreSQL add-on에서 DB `onlypear_sales`와 사용자 `sales`를 만듭니다.
 2. 이 add-on의 설정에 `database_url`을 넣고 시작합니다. 시작할 때 DB 마이그레이션이 자동으로 실행됩니다.
 3. 내부망에서는 `http://<HA IP>:8002`로 접속합니다. 외부 주소는 cloudflared add-on에 `onlypear-sales.onlypearson.com` → `http://<이 add-on 호스트명>:8000` 규칙을 추가해서 연결합니다(인증 구현 후).
+
+## 백업
+
+- 매일 02:30에 DB 덤프를 `/share/onlypear-sales/backups/`에 남깁니다(최근 14개). 업데이트로 DB 구조가 바뀔 때는 그 직전에도 남깁니다(최근 5개). 직전 덤프를 남기지 못하면 DB를 바꾸지 않고 시작을 멈춥니다. 로그에서 원인을 확인하세요.
+- 바깥 보관은 HA 자동 백업에 맡깁니다(`share` 폴더 포함). 복원 방법은 저장소의 `docs/backup.md`를 참고하세요.
