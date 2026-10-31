@@ -1,6 +1,6 @@
 name: 오로지배 매출관리
 description: 오로지배 거래처·품목·거래 관리
-version: "0.29.1"
+version: "0.30.0"
 slug: onlypear_sales
 url: https://github.com/bluewings109/onlypear-sales-management
 arch:
@@ -27,3 +27,6 @@ schema:
   # 볼타 전자계산서 (D-86). 비워 두면 볼타 발행을 숨긴다.
   bolta_api_key: password?
   bolta_webhook_token: password?
+  # 서버 오류 텔레그램 알림 (D-97). 둘 다 넣어야 보낸다.
+  telegram_bot_token: password?
+  telegram_chat_id: str?

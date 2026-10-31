@@ -9,6 +9,8 @@
 | `log_level` | 로그 레벨 |
 | `bolta_api_key` | 볼타 전자계산서 API 키(선택). 비워 두면 볼타 발행을 숨깁니다. `test_`는 테스트, `live_`는 실제 발행 |
 | `bolta_webhook_token` | 볼타 웹훅 주소의 비밀 토큰(선택). 볼타 개발자센터의 웹훅 URL `…/api/v1/webhooks/bolta/<토큰>`과 같은 값 |
+| `telegram_bot_token` | 서버 오류 알림을 보낼 텔레그램 봇 토큰(선택). BotFather에서 받습니다 |
+| `telegram_chat_id` | 알림을 받을 텔레그램 채팅 번호(선택). 두 값을 모두 넣어야 알림이 갑니다 |
 
 > `database_url`은 반드시 **`postgresql+asyncpg://`**로 시작해야 합니다. `postgresql://`로 넣으면 이미지에 없는 다른 드라이버(psycopg)를 찾다가 시작에 실패합니다.
 
