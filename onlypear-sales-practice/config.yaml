@@ -1,0 +1,33 @@
+name: 오로지배 매출관리 (연습)
+description: 운영 데이터에 영향 없이 연습하는 오로지배 매출관리 (D-98)
+version: "0.31.0"
+slug: onlypear_sales_practice
+url: https://github.com/bluewings109/onlypear-sales-management
+arch:
+  - aarch64
+image: ghcr.io/bluewings109/onlypear-sales
+startup: application
+boot: auto
+ports:
+  8000/tcp: 8003
+ports_description:
+  8000/tcp: 웹 UI / API (내부망 접속용 호스트 포트)
+# 연습 서버로 동작한다: DB 덤프를 만들지 않고, 메일·계산서를 연습용 주소로만 보내고, 화면에 "연습 중" 띠를 보인다.
+# 바꿀 수 없게 옵션이 아니라 환경변수로 둔다. share 폴더는 연결하지 않는다(운영 백업 폴더를 건드리지 않음).
+environment:
+  ONLYPEAR_PRACTICE: "true"
+options:
+  database_url: ""
+  source_database_url: ""
+  log_level: info
+schema:
+  # 연습 DB. 예) postgresql+asyncpg://sales_practice:****@77b2833f-timescaledb:5432/onlypear_sales_practice
+  database_url: str
+  # [연습 데이터 초기화]가 복사해 올 운영 DB. 읽기 권한만 있는 sales_practice 계정으로.
+  source_database_url: password
+  # 기본값을 두지 않아서, 설정하지 않으면 HA가 add-on 시작을 막는다. 운영과 다른 비밀번호로.
+  login_password: password
+  log_level: list(debug|info|warning|error)
+  # 볼타 전자계산서 (D-86). 테스트 키(test_)만. live_ 키면 시작하지 않는다.
+  bolta_api_key: password?
+  bolta_webhook_token: password?
