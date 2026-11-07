@@ -1,6 +1,6 @@
 name: 오로지배 매출관리 (연습)
 description: 운영 데이터에 영향 없이 연습하는 오로지배 매출관리 (D-98)
-version: "0.31.0"
+version: "0.32.0"
 slug: onlypear_sales_practice
 url: https://github.com/bluewings109/onlypear-sales-management
 arch:

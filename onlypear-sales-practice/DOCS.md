@@ -24,5 +24,5 @@
 
 1. DB `onlypear_sales_practice`와 계정 `sales_practice`를 만듭니다(`docs/deployment.md`의 SQL).
 2. 옵션을 넣고 시작합니다. 빈 연습 DB에 마이그레이션이 자동으로 실행됩니다.
-3. 내부망에서는 `http://<HA IP>:8003`, 외부에서는 `https://onlypear-practice.onlypearson.com`으로 접속합니다.
+3. 내부망에서는 `http://<HA IP>:8003`, 외부에서는 `https://onlypear-sales-practice.onlypearson.com`으로 접속합니다.
 4. PC 화면 → 설정 → 메일 설정에 `onlypearson-dev@naver.com`의 애플리케이션 비밀번호를 넣고, [연습 데이터 초기화]를 누릅니다.
